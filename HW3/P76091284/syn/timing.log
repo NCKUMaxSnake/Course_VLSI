@@ -1,0 +1,93 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: Q-2019.12
+Date   : Tue Nov 30 03:16:36 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: WCCOM   Library: fsa0m_a_generic_core_ss1p62v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: DRAM_valid (input port clocked by clk)
+  Endpoint: DM1/i_SRAM (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                enG1000K              fsa0m_a_generic_core_ss1p62v125c
+  DRAM_wrapper       enG5K                 fsa0m_a_generic_core_ss1p62v125c
+  RD                 enG5K                 fsa0m_a_generic_core_ss1p62v125c
+  SRAM_wrapper_0     enG500K               fsa0m_a_generic_core_ss1p62v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  input external delay                                   10.00      11.00 f
+  DRAM_valid (in)                                         0.15      11.15 f
+  DRAM_wrapper/DRAM_valid (DRAM_wrapper)                  0.00      11.15 f
+  DRAM_wrapper/U18/O (ND2F)                               0.16      11.31 r
+  DRAM_wrapper/U11/O (INV12)                              0.12      11.43 f
+  DRAM_wrapper/RVALID (DRAM_wrapper)                      0.00      11.43 f
+  AXI/RVALID_S3 (AXI)                                     0.00      11.43 f
+  AXI/uRD/RVALID_S3 (RD)                                  0.00      11.43 f
+  AXI/uRD/U7/O (ND2F)                                     0.09      11.52 r
+  AXI/uRD/U30/O (ND2P)                                    0.08      11.59 f
+  AXI/uRD/U5/O (NR2T)                                     0.16      11.76 r
+  AXI/uRD/U14/O (ND2)                                     0.18      11.94 f
+  AXI/uRD/U21/O (INV1S)                                   0.24      12.18 r
+  AXI/uRD/U27/O (BUF1)                                    0.40      12.57 r
+  AXI/uRD/U12/O (AO222)                                   0.30      12.87 r
+  AXI/uRD/U11/O (INV1S)                                   0.18      13.05 f
+  AXI/uRD/U42/O (ND2P)                                    0.15      13.20 r
+  AXI/uRD/U87/O (INV1S)                                   0.15      13.34 f
+  AXI/uRD/U154/O (ND2)                                    0.11      13.46 r
+  AXI/uRD/U18/O (ND2)                                     0.13      13.58 f
+  AXI/uRD/U17/O (ND2P)                                    0.24      13.83 r
+  AXI/uRD/U8/O (AN3T)                                     0.50      14.33 r
+  AXI/uRD/RREADY_S2 (RD)                                  0.00      14.33 r
+  AXI/RREADY_S2 (AXI)                                     0.00      14.33 r
+  DM1/RREADY (SRAM_wrapper_0)                             0.00      14.33 r
+  DM1/U37/O (ND2F)                                        0.21      14.54 f
+  DM1/U36/O (INV12CK)                                     0.12      14.66 r
+  DM1/U74/O (OA12P)                                       0.36      15.02 r
+  DM1/U175/O (AN2T)                                       0.29      15.31 r
+  DM1/U8/CO (FA1P)                                        0.44      15.75 r
+  DM1/U177/O (AN2T)                                       0.33      16.08 r
+  DM1/U16/O (AN2T)                                        0.31      16.40 r
+  DM1/U15/O (AN2T)                                        0.31      16.71 r
+  DM1/U18/O (AN2T)                                        0.31      17.02 r
+  DM1/U17/O (AN2T)                                        0.31      17.34 r
+  DM1/U21/O (AN2T)                                        0.31      17.65 r
+  DM1/U20/O (AN2T)                                        0.31      17.96 r
+  DM1/U29/O (AN2P)                                        0.41      18.38 r
+  DM1/U176/O (AN2T)                                       0.33      18.71 r
+  DM1/U178/O (AN2T)                                       0.32      19.03 r
+  DM1/U179/O (AN2T)                                       0.34      19.37 r
+  DM1/U22/O (XOR2HT)                                      0.18      19.55 r
+  DM1/U25/O (AOI22HT)                                     0.13      19.68 f
+  DM1/U24/O (ND2F)                                        0.22      19.90 r
+  DM1/i_SRAM/A13 (SRAM)                                   0.00      19.90 r
+  data arrival time                                                 19.90
+
+  clock clk (rise edge)                                  20.00      20.00
+  clock network delay (ideal)                             1.00      21.00
+  clock uncertainty                                      -0.10      20.90
+  DM1/i_SRAM/CK (SRAM)                                    0.00      20.90 r
+  library setup time                                     -0.99      19.91
+  data required time                                                19.91
+  --------------------------------------------------------------------------
+  data required time                                                19.91
+  data arrival time                                                -19.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+1
